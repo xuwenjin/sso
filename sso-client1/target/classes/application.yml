@@ -1,0 +1,15 @@
+server:
+  port: 8071
+  context-path: /client1
+  
+security:
+  oauth2:
+    client:
+      client-id: myid1
+      client-secret: mysecret1
+      access-token-uri: http://localhost:9999/server/oauth/token
+      user-authorization-uri: http://localhost:9999/server/oauth/authorize
+    resource:
+      jwt:
+        key-uri: http://localhost:9999/server/oauth/token_key
+   
