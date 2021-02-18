@@ -24,14 +24,14 @@ public class SsoAuthorizationServerConfig extends AuthorizationServerConfigurerA
 	@Override
 	public void configure(final ClientDetailsServiceConfigurer clients) throws Exception {
 		clients.inMemory() // 使用in-memory存储
-				.withClient("myid1") // client_id(这里配置了之后，那么客户端配置的这个就不起作用了)
-				.secret("mysecret1")// client_secret
+				.withClient("myid1")
+				.secret("mysecret1")
 				.accessTokenValiditySeconds(7200) // 发出去的令牌有效时间(秒)
 				.authorizedGrantTypes("authorization_code", "password") // 该client允许的授权类型
 				.scopes("all") // 允许的授权范围(如果是all，则请求中可以不要scope参数，否则必须加上scopes中配置的)
 				.autoApprove(true) // 自动审核
-				.and().withClient("myid2") // client_id(这里配置了之后，那么客户端配置的这个就不起作用了)
-				.secret("mysecret2")// client_secret
+				.and().withClient("myid2") 
+				.secret("mysecret2")
 				.accessTokenValiditySeconds(7200) // 发出去的令牌有效时间(秒)
 				.authorizedGrantTypes("authorization_code", "password") // 该client允许的授权类型
 				.scopes("all") // 允许的授权范围(如果是all，则请求中可以不要scope参数，否则必须加上scopes中配置的)
